@@ -1,12 +1,6 @@
 import React from "react";
+import { Login } from "./components/Login";
 
-function App() {
-  return (
-    <div>
-      個人うぃき やること ・lintを導入する ・prettierを導入する
-      ・tsconfigを導入する ・ドメインを取得する ・ドメインにサイトを公開する ・
-    </div>
-  );
-}
-
-export default App;
+export const App = () => {
+  return <Login />;
+};

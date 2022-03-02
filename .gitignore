@@ -320,3 +320,4 @@ sketch
 # End of https://www.toptal.com/developers/gitignore/api/macos,git,intellij,react,node,firebase
 
 package-lock.json
+build/

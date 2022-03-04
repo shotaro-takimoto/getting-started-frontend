@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { actionCodeSettings, app } from "../utils/firebaseAuth";
-import {createUserWithEmailAndPassword, getAuth, sendSignInLinkToEmail } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  sendSignInLinkToEmail,
+} from "firebase/auth";
 
 export const Login = () => {
   const [email, setEmail] = useState("takioto.shotaro@gmail.com");
@@ -19,16 +23,20 @@ export const Login = () => {
   };
   return (
     <div>
-      mail:<input
+      mail:
+      <input
         type={"text"}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-      /><br/>
-      password:<input
+      />
+      <br />
+      password:
+      <input
         type={"password"}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-      /><br/>
+      />
+      <br />
       <button onClick={signUp}>sign up</button>
     </div>
   );

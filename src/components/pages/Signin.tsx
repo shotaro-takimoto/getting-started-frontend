@@ -1,21 +1,20 @@
 import React, { useState } from "react";
-import { actionCodeSettings, app } from "../utils/firebaseAuth";
-import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  sendSignInLinkToEmail,
-} from "firebase/auth";
+import { app } from "../../utils/firebaseAuth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
 
-export const Login = () => {
+export const Signin = () => {
   const [email, setEmail] = useState("takioto.shotaro@gmail.com");
   const [password, setPassword] = useState("");
-  const signUp = () => {
+  const navigate = useNavigate();
+  const signIn = () => {
     const auth = getAuth(app);
-    createUserWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        // ...
+        console.log(user);
+        navigate("/home");
       })
       .catch((error) => {
         console.error(error);
@@ -37,7 +36,10 @@ export const Login = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <br />
-      <button onClick={signUp}>sign up</button>
+      <button onClick={signIn}>Sign in</button>
+      <br />
+      <br />
+      <Link to="/signup">Sign up</Link>
     </div>
   );
 };

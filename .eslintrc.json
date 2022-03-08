@@ -1,3 +1,6 @@
+/**
+ * 不要importを自動で削除されると困ることがあるのでintellijで実行すること(option+control+o)
+ **/
 {
   "env": {
     "browser": true,

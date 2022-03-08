@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 const config = {
   apiKey: "AIzaSyBbIvSmqtVzRZ1WILrzH3LBvK6XzC3Vioo",
@@ -7,6 +8,7 @@ const config = {
 };
 
 export const app = initializeApp(config);
+export const auth = getAuth(app);
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore

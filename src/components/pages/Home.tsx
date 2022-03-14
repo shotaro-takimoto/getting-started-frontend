@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../utils/firebaseAuth";
+import { auth } from "../../utils/firebase";
+import {getCities} from "../../utils/firebase";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -9,11 +10,11 @@ export const Home = () => {
     navigate("/signin");
   };
   return (
-    <div>
+    <>
       THIS IS HOME
       <br />
-      <br />
-      <a onClick={handleLogout}>Sign out</a>
-    </div>
+      <button onClick={handleLogout}>Sign out</button><br/>
+      <button onClick={getCities}>Get from firestore</button><br/>
+    </>
   );
 };
